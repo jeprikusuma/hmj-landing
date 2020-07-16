@@ -18,6 +18,8 @@ back.addEventListener("click", () => {
   container.querySelector(".main-content").style.animation = "1s both sideBack";
 });
 
-function loaderFun() {
-  loader.classList.remove("active");
-}
+// add class "active" on class "loader" first
+
+// function loaderFun() {
+//   loader.classList.remove("active");
+// }

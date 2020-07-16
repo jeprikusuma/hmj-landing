@@ -210,6 +210,8 @@ a {
   opacity: 0;
   pointer-events: none;
   position: absolute;
+  height: 100vh;
+  width: 100vw;
 }
 .loader.active {
   opacity: 1;
@@ -248,7 +250,9 @@ a {
 @media screen and (max-width: 550px) {
   .container {
     display: block;
-    overflow: auto;
+    width: 100vw;
+    overflow-x: hidden;
+    overflow-y: auto;
   }
   .container main {
     position: absolute;
@@ -275,7 +279,7 @@ a {
   }
   .container .more-content {
     width: 100vw;
-    height: unset;
+    height: auto;
     transform: none;
     opacity: 0;
     display: flex;
@@ -284,6 +288,7 @@ a {
     opacity: 1;
     border-top-left-radius: 3rem;
     border-top-right-radius: 3rem;
+    overflow: auto;
   }
   .more-content .back {
     position: absolute;
@@ -293,8 +298,9 @@ a {
   }
   .more-content .content {
     width: 90vw;
-    height: inherit;
+    height: auto;
     margin: auto;
+    overflow: auto;
   }
   .content .link-all {
     grid-template-columns: 1fr 1fr;
