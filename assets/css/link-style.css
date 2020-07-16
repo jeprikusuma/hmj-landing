@@ -9,11 +9,7 @@
   overflow: hidden;
   display: flex;
   position: relative;
-  background: linear-gradient(
-    45deg,
-    rgba(117, 58, 136, 1) 0%,
-    rgba(255, 43, 94, 1) 100%
-  );
+  background: linear-gradient(45deg, #764ba2 0%, #667eea 100%);
   background-size: 400vh 400vh;
   animation: gradient_animation 30s ease-in-out;
   animation-iteration-count: infinite;
