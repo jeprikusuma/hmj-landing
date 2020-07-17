@@ -20,6 +20,12 @@ back.addEventListener("click", () => {
 
 // add class "active" on class "loader" first
 
-// function loaderFun() {
-//   loader.classList.remove("active");
-// }
+const logo = container.querySelector("header .logo"),
+  logoImg = container.querySelector("header .logo img"),
+  text = container.querySelector("header .text");
+function loaderFun() {
+  loader.classList.remove("active");
+  logo.style.animationPlayState = "running";
+  logoImg.style.animationPlayState = "running";
+  text.style.animationPlayState = "running";
+}

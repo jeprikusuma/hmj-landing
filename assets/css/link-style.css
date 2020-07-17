@@ -31,6 +31,7 @@ header .logo {
   animation-name: imgScale;
   animation-duration: 1.5s;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 header .logo img {
   height: 15rem;
@@ -40,6 +41,7 @@ header .logo img {
   animation-name: imgRotate;
   animation-duration: 1.5s;
   animation-fill-mode: both;
+  animation-play-state: paused;
 }
 header .text {
   text-align: center;
@@ -48,6 +50,7 @@ header .text {
   animation-duration: 0.8s;
   animation-fill-mode: both;
   animation-delay: 1.5s;
+  animation-play-state: paused;
 }
 header .text h1 {
   font-family: "Francois One", sans-serif;
@@ -226,6 +229,7 @@ a {
 }
 .loader.active .item {
   margin: auto;
+  text-align: center;
 }
 .loader.active .item img {
   width: 15rem;
