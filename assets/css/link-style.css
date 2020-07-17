@@ -275,7 +275,7 @@ a {
   }
   .container .main-content {
     width: unset;
-    height: 40vh;
+    height: 60vh;
   }
   .container .more-content {
     width: 100vw;
@@ -286,6 +286,7 @@ a {
     flex-direction: column;
     justify-content: center;
     opacity: 1;
+    padding-bottom: 2rem;
     border-top-left-radius: 3rem;
     border-top-right-radius: 3rem;
     overflow: auto;
