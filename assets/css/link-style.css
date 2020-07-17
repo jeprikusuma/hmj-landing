@@ -10,10 +10,9 @@
   display: flex;
   position: relative;
   background: linear-gradient(45deg, #764ba2 0%, #667eea 100%);
-  background-size: 400vh 400vh;
   animation: gradient_animation 30s ease-in-out;
   animation-iteration-count: infinite;
-  font-family: "Karla", sans-serif;
+  font-family: "Poppins", sans-serif;
   color: whitesmoke;
 }
 .main-content {
@@ -53,10 +52,11 @@ header .text {
   animation-play-state: paused;
 }
 header .text h1 {
-  font-family: "Francois One", sans-serif;
+  font-weight: 700;
 }
 header .text h4 {
   font-size: 20px;
+  font-weight: 400;
 }
 main .link {
   display: flex;
@@ -118,10 +118,15 @@ a {
 }
 .link a h5 {
   position: absolute;
+  text-align: center;
   bottom: -1.5rem;
   width: 100%;
   color: whitesmoke;
   opacity: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  font-weight: 400;
 }
 .more-content {
   height: 100vh;
@@ -185,6 +190,7 @@ a {
   justify-content: center;
   align-items: center;
   box-shadow: 8px 4px 8px 0 rgba(0, 0, 0, 0.1);
+  font-weight: 400;
 }
 .link-all a i {
   font-size: 3rem;
