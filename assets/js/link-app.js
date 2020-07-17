@@ -22,10 +22,12 @@ back.addEventListener("click", () => {
 
 const logo = container.querySelector("header .logo"),
   logoImg = container.querySelector("header .logo img"),
-  text = container.querySelector("header .text");
+  text = container.querySelector("header .text"),
+  link = container.querySelector("main .link");
 function loaderFun() {
   loader.classList.remove("active");
   logo.style.animationPlayState = "running";
   logoImg.style.animationPlayState = "running";
   text.style.animationPlayState = "running";
+  link.style.animationPlayState = "running";
 }
