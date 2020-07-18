@@ -34,11 +34,18 @@ function loaderFun() {
 }
 
 //mobile animation
-
+let first = true;
 setInterval(() => {
   if (screen.width <= 550) {
     let beforePos = container.scrollTop;
     container.querySelector(".more-content").style.transition = "500ms";
+    while (first) {
+      container.querySelector(".more-content").style.borderTopLeftRadius =
+        "3rem";
+      container.querySelector(".more-content").style.borderTopRightRadius =
+        "3rem";
+      first = false;
+    }
 
     container.onscroll = () => {
       if (beforePos < container.scrollTop) {
@@ -56,5 +63,6 @@ setInterval(() => {
     };
   } else {
     container.querySelector(".more-content").style.borderRadius = "0";
+    first = true;
   }
 }, 100);
