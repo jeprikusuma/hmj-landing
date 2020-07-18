@@ -3,6 +3,7 @@ const container = document.querySelector(".container"),
   back = container.querySelector(".more-content .back a"),
   loader = document.querySelector(".loader");
 
+// full size animation
 more.addEventListener("click", () => {
   container.classList.add("show-more");
   container.querySelector(".more-content").style.animation =
@@ -18,8 +19,8 @@ back.addEventListener("click", () => {
   container.querySelector(".main-content").style.animation = "1s both sideBack";
 });
 
+//loader
 // add class "active" on class "loader" first
-
 const logo = container.querySelector("header .logo"),
   logoImg = container.querySelector("header .logo img"),
   text = container.querySelector("header .text"),
@@ -30,4 +31,26 @@ function loaderFun() {
   logoImg.style.animationPlayState = "running";
   text.style.animationPlayState = "running";
   link.style.animationPlayState = "running";
+}
+
+//mobile animation
+
+if (screen.width <= 550) {
+  let beforePos = container.scrollTop;
+  container.querySelector(".more-content").style.transition = "500ms";
+
+  container.onscroll = () => {
+    if (beforePos < container.scrollTop) {
+      container.querySelector(".more-content").style.borderTopLeftRadius =
+        "0rem";
+      container.querySelector(".more-content").style.borderTopRightRadius =
+        "0rem";
+    } else {
+      container.querySelector(".more-content").style.borderTopLeftRadius =
+        "3rem";
+      container.querySelector(".more-content").style.borderTopRightRadius =
+        "3rem";
+    }
+    beforePos = container.scrollTop;
+  };
 }

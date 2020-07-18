@@ -284,17 +284,18 @@ a {
     margin: auto;
   }
   header .logo img {
-    height: 7rem;
-  }
-  header .text h4 {
-    font-size: 1rem;
+    height: 11rem;
   }
   header .text h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+  header .text h4 {
+    font-size: 1.2rem;
   }
   .container .main-content {
     width: unset;
-    height: 97vh;
+    height: 100vh;
+    position: fixed;
   }
   .container .more-content {
     width: 100vw;
@@ -309,11 +310,16 @@ a {
     border-top-left-radius: 3rem;
     border-top-right-radius: 3rem;
     overflow: auto;
+    transform: translateY(95vh);
   }
   .more-content .back {
+    transform: translateY(-100vh);
+    height: 0vh;
+  }
+  .more-content .back a {
     position: absolute;
-    opacity: 0;
     display: hidden;
+    opacity: 0;
     pointer-events: none;
   }
   .more-content .content {
