@@ -35,22 +35,26 @@ function loaderFun() {
 
 //mobile animation
 
-if (screen.width <= 550) {
-  let beforePos = container.scrollTop;
-  container.querySelector(".more-content").style.transition = "500ms";
+setInterval(() => {
+  if (screen.width <= 550) {
+    let beforePos = container.scrollTop;
+    container.querySelector(".more-content").style.transition = "500ms";
 
-  container.onscroll = () => {
-    if (beforePos < container.scrollTop) {
-      container.querySelector(".more-content").style.borderTopLeftRadius =
-        "0rem";
-      container.querySelector(".more-content").style.borderTopRightRadius =
-        "0rem";
-    } else {
-      container.querySelector(".more-content").style.borderTopLeftRadius =
-        "3rem";
-      container.querySelector(".more-content").style.borderTopRightRadius =
-        "3rem";
-    }
-    beforePos = container.scrollTop;
-  };
-}
+    container.onscroll = () => {
+      if (beforePos < container.scrollTop) {
+        container.querySelector(".more-content").style.borderTopLeftRadius =
+          "0rem";
+        container.querySelector(".more-content").style.borderTopRightRadius =
+          "0rem";
+      } else {
+        container.querySelector(".more-content").style.borderTopLeftRadius =
+          "3rem";
+        container.querySelector(".more-content").style.borderTopRightRadius =
+          "3rem";
+      }
+      beforePos = container.scrollTop;
+    };
+  } else {
+    container.querySelector(".more-content").style.borderRadius = "0";
+  }
+}, 100);
