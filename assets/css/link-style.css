@@ -9,7 +9,7 @@
   overflow: hidden;
   display: flex;
   position: relative;
-  background: linear-gradient(45deg, #764ba2 0%, #667eea 100%);
+  background: linear-gradient(45deg, #8235c9 0%, #250762 100%);
   animation: gradient_animation 30s ease-in-out;
   animation-iteration-count: infinite;
   font-family: "Poppins", sans-serif;
@@ -156,10 +156,12 @@ a {
   justify-content: center;
   align-items: center;
   transform: translateX(-50%);
+  transition: 0.5s;
 }
 .more-content .back a:hover {
-  background-color: salmon;
+  background-color: #8235c9;
   color: #020047;
+  box-shadow: 8px 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .more-content .tag {
   font-size: 2rem;
@@ -171,6 +173,7 @@ a {
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-weight: 400;
 }
 .more-content .link-all {
   display: grid;
@@ -192,6 +195,11 @@ a {
   align-items: center;
   box-shadow: 8px 4px 8px 0 rgba(0, 0, 0, 0.1);
   font-weight: 400;
+  transition: 0.5s;
+}
+.link-all a:hover {
+  background-color: #8235c9;
+  box-shadow: 8px 4px 8px 0 rgba(0, 0, 0, 0.3);
 }
 .link-all a i {
   font-size: 3rem;
@@ -201,6 +209,9 @@ a {
   justify-content: center;
   pointer-events: all;
   transition: 0.5s;
+}
+.link-all a h5 {
+  font-weight: 400;
 }
 /* more content */
 .container.show-more .main-content main .link {
@@ -245,12 +256,13 @@ a {
   position: absolute;
   bottom: 0;
   z-index: -1;
+  width: 100vw;
+  overflow: hidden;
+  position: absolute;
+  top: -10vh;
 }
 .background img {
-  position: absolute;
-  bottom: -10vw;
   width: 100vw;
-  opacity: 0.1;
 } */
 
 /* responsive */
@@ -282,7 +294,7 @@ a {
   }
   .container .main-content {
     width: unset;
-    height: 60vh;
+    height: 97vh;
   }
   .container .more-content {
     width: 100vw;
