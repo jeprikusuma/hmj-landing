@@ -315,6 +315,8 @@ a {
   .more-content .back {
     transform: translateY(-100vh);
     height: 0vh;
+    pointer-events: none;
+    z-index: -99;
   }
   .more-content .back a {
     position: absolute;
