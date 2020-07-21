@@ -9,7 +9,7 @@
   overflow: hidden;
   display: flex;
   position: relative;
-  background: linear-gradient(45deg, #8235c9 0%, #250762 100%);
+  background: transparent;
   animation: gradient_animation 30s ease-in-out;
   animation-iteration-count: infinite;
   font-family: "Poppins", sans-serif;
@@ -252,18 +252,17 @@ a {
 .loader.active .item img {
   width: 15rem;
 }
-/* .background {
-  position: absolute;
-  bottom: 0;
+.background {
   z-index: -1;
   width: 100vw;
+  height: 100vh;
   overflow: hidden;
   position: absolute;
-  top: -10vh;
 }
 .background img {
   width: 100vw;
-} */
+  height: 100vh;
+}
 
 /* responsive */
 @media screen and (max-width: 550px) {
@@ -342,6 +341,9 @@ a {
     margin: auto;
     width: 8rem;
     height: 9.5rem;
+  }
+  .background img {
+    width: unset;
   }
 }
 /* Animation */

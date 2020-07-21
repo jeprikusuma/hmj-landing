@@ -1,7 +1,8 @@
 const container = document.querySelector(".container"),
   more = container.querySelector(".link a.more"),
   back = container.querySelector(".more-content .back a"),
-  loader = document.querySelector(".loader");
+  loader = document.querySelector(".loader"),
+  background = document.querySelector(".background img");
 
 // full size animation
 more.addEventListener("click", () => {
@@ -44,6 +45,7 @@ setInterval(() => {
         "3rem";
       container.querySelector(".more-content").style.borderTopRightRadius =
         "3rem";
+      background.src = "assets/img/background-mobile.png";
       first = false;
     }
 
@@ -63,6 +65,21 @@ setInterval(() => {
     };
   } else {
     container.querySelector(".more-content").style.borderRadius = "0";
+    background.src = "assets/img/background.png";
     first = true;
+  }
+}, 100);
+
+//background
+let firstBg = true;
+setInterval(() => {
+  if (screen.width <= 411) {
+    while (firstBg) {
+      background.src = "assets/img/background-mobile.png";
+      firstBg = false;
+    }
+  } else {
+    background.src = "assets/img/background.png";
+    firstBg = true;
   }
 }, 100);
