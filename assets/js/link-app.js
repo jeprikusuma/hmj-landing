@@ -2,7 +2,32 @@ const container = document.querySelector(".container"),
   more = container.querySelector(".link a.more"),
   back = container.querySelector(".more-content .back a"),
   loader = document.querySelector(".loader"),
-  background = document.querySelector(".background img");
+  background = document.querySelector(".background img"),
+  swipe = document.querySelector(".swipe img");
+
+//prepare first reload (img)
+let firstBg = true,
+  swipeAdd = true;
+setInterval(() => {
+  if (screen.width <= 411) {
+    while (firstBg) {
+      background.src = "assets/img/background-mobile.jpg";
+      firstBg = false;
+    }
+  } else {
+    background.src = "assets/img/background.jpg";
+    firstBg = true;
+  }
+  if (screen.width <= 550) {
+    while (swipeAdd) {
+      swipe.src = "assets/img/swipe.gif";
+      swipeAdd = false;
+    }
+  } else {
+    swipe.src = "";
+    swipeAdd = true;
+  }
+}, 100);
 
 // full size animation
 more.addEventListener("click", () => {
@@ -39,47 +64,40 @@ let first = true;
 setInterval(() => {
   if (screen.width <= 550) {
     let beforePos = container.scrollTop;
-    container.querySelector(".more-content").style.transition = "500ms";
+    container.querySelector(".more-content .content").style.transition =
+      "500ms";
+
     while (first) {
-      container.querySelector(".more-content").style.borderTopLeftRadius =
-        "3rem";
-      container.querySelector(".more-content").style.borderTopRightRadius =
-        "3rem";
-      background.src = "assets/img/background-mobile.png";
+      container.querySelector(
+        ".more-content .content"
+      ).style.borderTopLeftRadius = "3rem";
+      container.querySelector(
+        ".more-content .content"
+      ).style.borderTopRightRadius = "3rem";
       first = false;
     }
 
     container.onscroll = () => {
       if (beforePos < container.scrollTop) {
-        container.querySelector(".more-content").style.borderTopLeftRadius =
-          "0rem";
-        container.querySelector(".more-content").style.borderTopRightRadius =
-          "0rem";
+        container.querySelector(
+          ".more-content .content"
+        ).style.borderTopLeftRadius = "0rem";
+        container.querySelector(
+          ".more-content .content"
+        ).style.borderTopRightRadius = "0rem";
       } else {
-        container.querySelector(".more-content").style.borderTopLeftRadius =
-          "3rem";
-        container.querySelector(".more-content").style.borderTopRightRadius =
-          "3rem";
+        container.querySelector(
+          ".more-content .content"
+        ).style.borderTopLeftRadius = "3rem";
+        container.querySelector(
+          ".more-content .content"
+        ).style.borderTopRightRadius = "3rem";
       }
+
       beforePos = container.scrollTop;
     };
   } else {
-    container.querySelector(".more-content").style.borderRadius = "0";
-    background.src = "assets/img/background.png";
+    container.querySelector(".more-content .content").style.borderRadius = "0";
     first = true;
-  }
-}, 100);
-
-//background
-let firstBg = true;
-setInterval(() => {
-  if (screen.width <= 411) {
-    while (firstBg) {
-      background.src = "assets/img/background-mobile.png";
-      firstBg = false;
-    }
-  } else {
-    background.src = "assets/img/background.png";
-    firstBg = true;
   }
 }, 100);

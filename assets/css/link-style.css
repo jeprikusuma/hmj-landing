@@ -178,7 +178,7 @@ a {
 .more-content .link-all {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  gap: 1rem;
+  row-gap: 1.5rem;
   width: 90%;
 }
 .link-all a {
@@ -212,6 +212,12 @@ a {
 }
 .link-all a h5 {
   font-weight: 400;
+}
+.swipe {
+  opacity: 0;
+  position: absolute;
+  pointer-events: none;
+  z-index: -999;
 }
 /* more content */
 .container.show-more .main-content main .link {
@@ -276,6 +282,11 @@ a {
     position: absolute;
     display: hidden;
     opacity: 0;
+  }
+  .container main .link a {
+    pointer-events: none;
+  }
+  .container main .link a i {
     pointer-events: none;
   }
   .container header {
@@ -305,15 +316,13 @@ a {
     flex-direction: column;
     justify-content: center;
     opacity: 1;
-    padding-bottom: 2rem;
     border-top-left-radius: 3rem;
     border-top-right-radius: 3rem;
     overflow: auto;
-    transform: translateY(95vh);
+    transform: translateY(-12vh);
+    background-color: transparent;
   }
   .more-content .back {
-    transform: translateY(-100vh);
-    height: 0vh;
     pointer-events: none;
     z-index: -99;
   }
@@ -324,15 +333,19 @@ a {
     pointer-events: none;
   }
   .more-content .content {
-    width: 90vw;
+    width: 100vw;
     height: auto;
     margin: auto;
     overflow: auto;
+    background-color: white;
+    padding-top: 1rem;
   }
   .content .link-all {
     grid-template-columns: 1fr 1fr;
     justify-items: center;
     margin: auto;
+    width: 80vw;
+    padding-bottom: 2rem;
   }
   .content .tag {
     text-align: center;
@@ -341,6 +354,20 @@ a {
     margin: auto;
     width: 8rem;
     height: 9.5rem;
+  }
+  .swipe {
+    opacity: 1;
+    pointer-events: all;
+    z-index: 99;
+    position: static;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
+  }
+  .swipe img {
+    width: 3rem;
+    transition: 0.2s;
   }
   .background img {
     width: unset;
