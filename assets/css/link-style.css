@@ -374,6 +374,12 @@ a {
     width: unset;
   }
 }
+@media screen and (max-height: 720px) and (max-width: 410px) {
+  .background img {
+    height: unset;
+    width: 100vw;
+  }
+}
 /* Animation */
 @keyframes gradient_animation {
   0% {
