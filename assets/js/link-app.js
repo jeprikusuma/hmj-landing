@@ -5,30 +5,6 @@ const container = document.querySelector(".container"),
   background = document.querySelector(".background img"),
   swipe = document.querySelector(".swipe img");
 
-//prepare first reload (img)
-let firstBg = true,
-  swipeAdd = true;
-setInterval(() => {
-  if (screen.width <= 411) {
-    while (firstBg) {
-      background.src = "assets/img/background-mobile.jpg";
-      firstBg = false;
-    }
-  } else {
-    background.src = "assets/img/background.jpg";
-    firstBg = true;
-  }
-  if (screen.width <= 550) {
-    while (swipeAdd) {
-      swipe.src = "assets/img/swipe.gif";
-      swipeAdd = false;
-    }
-  } else {
-    swipe.src = "";
-    swipeAdd = true;
-  }
-}, 100);
-
 // full size animation
 more.addEventListener("click", () => {
   container.classList.add("show-more");
@@ -57,6 +33,30 @@ function loaderFun() {
   logoImg.style.animationPlayState = "running";
   text.style.animationPlayState = "running";
   link.style.animationPlayState = "running";
+
+  //prepare first reload (img)
+  let firstBg = true,
+    swipeAdd = true;
+  setInterval(() => {
+    if (screen.width <= 411) {
+      while (firstBg) {
+        background.src = "assets/img/background-mobile.jpg";
+        firstBg = false;
+      }
+    } else {
+      background.src = "assets/img/background.jpg";
+      firstBg = true;
+    }
+    if (screen.width <= 550) {
+      while (swipeAdd) {
+        swipe.src = "assets/img/swipe.gif";
+        swipeAdd = false;
+      }
+    } else {
+      swipe.src = "";
+      swipeAdd = true;
+    }
+  }, 100);
 }
 
 //mobile animation
